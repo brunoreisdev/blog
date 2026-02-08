@@ -8,11 +8,11 @@ import { HeaderWrapper,
   IconSearch,
   Container
 } from "./header.styles";
-import dws1 from "../../assets/images/dws1.png";
+import dws1 from "assets/images/dws1.png";
 import { SearchMobile } from "./header-mobile/search-mobile.component";
 import { MetaViewport } from "./meta-viewport/meta-viewport.component";
 
-const HeaderMobile = ({ onPress }) => {
+function HeaderMobile({ onPress }) {
   return (
     <SearchIconMobile onClick={onPress}>
       <IconSearch />
@@ -21,7 +21,7 @@ const HeaderMobile = ({ onPress }) => {
 }
 
 
-export const Header = () => {
+export function Header() {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
 
   return (

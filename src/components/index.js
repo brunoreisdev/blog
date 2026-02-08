@@ -1,9 +1,7 @@
-import { Card } from "./commons/card/card.component";
 import { Header } from "./header/header.component";
-import { Chips } from "./commons/chips/chips.component";
+import { Gallery } from "./gallery/gallery.component";
 
 export {
   Header,
-  Card,
-  Chips,
+  Gallery
 }

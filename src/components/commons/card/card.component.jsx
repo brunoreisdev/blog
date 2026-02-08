@@ -3,7 +3,7 @@ import { CardWrapper }  from "./card.styles";
 import { CardHeader, CardBody } from "./components";
 
 
-export const Card = ({ title, content, uri }) => {
+export function Card({ title, content, uri }) {
   return (
     <CardWrapper>
       <CardHeader uri="https://dws-tech-test-assets.s3.amazonaws.com/images/thumb-1.jpg" />

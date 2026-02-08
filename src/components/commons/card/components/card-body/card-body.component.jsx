@@ -2,15 +2,17 @@ import React from "react";
 import { BodyContent, CardBodyWrapper, Circle, DateAndAuthorWrapper, Title, Text } from "./card-body.styles";
 
 
-const DateAndAuthor = ({ date, author }) => (
-  <DateAndAuthorWrapper>
-    <small>{date}</small>
-    <Circle>•</Circle>
-    <small>{author}</small>
-  </DateAndAuthorWrapper>
-);
+function DateAndAuthor({ date, author }) {
+  return (
+    <DateAndAuthorWrapper>
+      <small>{date}</small>
+      <Circle>•</Circle>
+      <small>{author}</small>
+    </DateAndAuthorWrapper>
+  );
+}
 
-export const CardBody = ({ title, content }) => {
+export function CardBody({ title, content }) {
   return (
     <CardBodyWrapper>
       <DateAndAuthor date="June 20, 2023" author="John Doe" />
