@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { Chips } from "../../components";
-import { accent, neutrals } from "../../assets/colors";
+import { Chips } from "components/commons";
+import { accent, neutrals } from "assets/colors";
 import { HiMiniArrowsUpDown } from "react-icons/hi2";
-import { BodySmall, Container } from "../../assets/styles/default";
+import { Small, Container, H2 } from "assets/styles/default";
 
 
 const WrapperSort = styled.div`
   display: flex;
   align-items: center;
-  justify-content: "flex-end";
+  justify-content: flex-end;
 `
 
 const IconSort = styled(HiMiniArrowsUpDown)`
@@ -21,8 +21,7 @@ const ChipsSort = styled(Chips)`
   color: ${neutrals.extraDark};
   width: 100px;
   cursor: pointer;
-  padding-right: 8px;
-  padding-left: 8px; 
+  padding: 8px;
   justify-content: space-between;
 
   &:hover {
@@ -37,9 +36,10 @@ const ChipsSort = styled(Chips)`
 
 const BodyContainer = styled(Container)`
   flex-direction: column;
+  display: flex;
 `
 
-const SortLabel = styled(BodySmall)`
+const SortLabel = styled(Small)`
   font-weight: 600;
   color: ${neutrals.extraDark};
   display: none;
@@ -59,9 +59,28 @@ const RowSort = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 24px;
 `
+
+const ContentGrid = styled.div`
+  display: flex;
+  width: 100%;
+`
+
+const ContentFilter = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 314px;
+`
+
+const Title = styled(H2)`
+  display: none;
+  @media (min-width: 900px) {
+    display: flex;
+  }
+`;
 
 
 export {
@@ -71,5 +90,8 @@ export {
   WrapperSort,
   SortLabel,
   RowSort,
-  Content
+  Content,
+  ContentGrid,
+  ContentFilter,
+  Title
 }

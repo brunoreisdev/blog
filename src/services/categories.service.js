@@ -1,14 +1,13 @@
-import axios from "axios";
-
-
-export class Categories {
+export class CategoriesService {
   fetchCategories = async () => {
-    const response = await axios.get("https://tech-test-backend.dwsbrazil.io/categories");
-    return response.data;
+    return fetch("https://tech-test-backend.dwsbrazil.io/categories")
+      .then(data => data.json())
+      .catch(error => console.log(error));
   }
 
   fetchCategory = async(id) => {
-    const response = await axios.get(`https://tech-test-backend.dwsbrazil.io/categories/${id}`);
-    return response.data;
-  }
+    return fetch(`https://tech-test-backend.dwsbrazil.io/categories/${id}`)
+      .then(data => data.json())
+      .catch(error => console.log(error));
+  } 
 };

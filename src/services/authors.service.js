@@ -1,14 +1,13 @@
-import axios from "axios";
-
-
-export class Authors {
+export class AuthorsService {
   fetchAuthors = async () => {
-    const response = await axios.get("https://tech-test-backend.dwsbrazil.io/authors");
-    return response.data;
+    return fetch("https://tech-test-backend.dwsbrazil.io/authors")
+      .then(data => data.json())
+      .catch(error => console.log(error));
   }
 
   fetchAuthor = async(id) => {
-    const response = await axios.get(`https://tech-test-backend.dwsbrazil.io/authors/${id}`);
-    return response.data;
+    return fetch(`https://tech-test-backend.dwsbrazil.io/authors/${id}`)
+      .then(data => data.json())
+      .catch(error => console.log(error));
   }
 };

@@ -3,11 +3,17 @@ import { CardWrapper }  from "./card.styles";
 import { CardHeader, CardBody } from "./components";
 
 
-export function Card({ title, content, uri }) {
+export function Card({ title, content, uri, createdAt, author, categories }) {
   return (
     <CardWrapper>
-      <CardHeader uri="https://dws-tech-test-assets.s3.amazonaws.com/images/thumb-1.jpg" />
-      <CardBody content={content} />
+      <CardHeader uri={uri}/>
+      <CardBody
+        content={content}
+        title={title}
+        createdAt={createdAt}
+        author={author}
+        categories={categories}
+      />
     </CardWrapper>
   );
 }

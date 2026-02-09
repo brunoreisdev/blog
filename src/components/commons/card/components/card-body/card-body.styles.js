@@ -1,4 +1,6 @@
+import { neutrals, secondary } from "assets/colors";
 import styled from "styled-components";
+import { Chips } from "../../../chips/chips.component";
 
 const CardBodyWrapper = styled.div`
   width: 314px;
@@ -7,7 +9,7 @@ const CardBodyWrapper = styled.div`
   align-items: flex-start;
   padding: 16px;
   gap: 16px;
-  border: solid 1px #E0E0E0;
+  border: solid 1px ${neutrals.extraLight};
   border-top: none;
   border-radius: 0px 0px 8px 8px;
   box-sizing: border-box;
@@ -19,13 +21,13 @@ const DateAndAuthorWrapper = styled.div`
   height: 19px;
   display: flex;
   gap: 8px;
-  align-items: flex-start;
+  align-items: center;
   justify-items: center;
   font: caption;
 `;
 
 const Circle = styled.div`
-  color: #D31450;
+  color: ${secondary.medium};
 `;
 
 const BodyContent = styled.div`
@@ -53,11 +55,24 @@ const Text = styled.small`
   -webkit-line-clamp: 2;
   `;
 
+const ChipsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+const ChipsCard = styled(Chips)`
+  background-color: ${neutrals.lightest};
+`
+
 export {
   CardBodyWrapper,
   DateAndAuthorWrapper,
   Circle,
   BodyContent,
   Title,
-  Text
+  Text,
+  ChipsContainer,
+  ChipsCard
 }

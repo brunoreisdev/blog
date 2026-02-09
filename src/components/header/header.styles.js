@@ -15,7 +15,7 @@ const Container = styled.div`
   border: solid 1px ${neutrals.extraLight};
 `
 const HeaderWrapper = styled.header`
-  max-width: 1600px;
+  max-width: 1440px;
   width: 100%;
   height: 80px;
   display: flex;

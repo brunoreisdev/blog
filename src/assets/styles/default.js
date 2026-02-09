@@ -24,21 +24,21 @@ const H3 = styled.h3`
   font-family: 'Open Sans', sans-serif;
 `;
 
-const BodyLarge = styled.p`
+const Large = styled.p`
   font-size: 16px;
   line-height: 150%;
   font-weight: 400;
   margin: 0;
 `;
 
-const BodySmall = styled.small`
+const Small = styled.small`
   font-size: 14px;
   line-height: 150%;
   font-weight: 400;
   margin: 0;
 `;
 
-const Caption = styled.caption`
+const Caption = styled.label`
   font-size: 12px;
   line-height: 150%;
   font-weight: 400;
@@ -46,7 +46,7 @@ const Caption = styled.caption`
 `;
 
 const Container = styled.div`
-  max-width: 1600px;
+  max-width: 1440px;
   display: flex;
   margin: 0 auto;
   padding: 0 16px; 
@@ -60,8 +60,8 @@ export {
   H1,
   H2,
   H3,
-  BodyLarge,
-  BodySmall,
+  Large,
+  Small,
   Caption,
   Container
 }

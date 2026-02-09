@@ -1,17 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import { Card, Header } from './components';
+import { Header } from './components';
 import { Home } from './screens/home/home.component';
+import { GalleryProvider } from 'context/gallery.context';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Home />
-      {/* <Card        
-        title="Sample Card"
-        content="TLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci sagittishis is a description for the sample card."
-      /> */}
+        <Header />
+      <GalleryProvider>
+        <Home />
+      </GalleryProvider>
     </div>
   );
 }

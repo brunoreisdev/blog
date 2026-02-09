@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HeaderWrapper,
   Logo,
   SearchIcon,
@@ -22,7 +22,7 @@ function HeaderMobile({ onPress }) {
 
 
 export function Header() {
-  const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
     <>

@@ -20,6 +20,7 @@ const secondary = {
   light: "#EF4C84",
   medium: "#D31450",
   dark: "#8C1038",
+  mediumOpacity: "#D314502B",
 }
 
 const accent = {

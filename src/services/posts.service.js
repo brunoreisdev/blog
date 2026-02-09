@@ -1,14 +1,13 @@
-import axios from "axios";
-
-
-export class Posts {
+export class PostsService {
   fetchPosts = async () => {
-    const response = await axios.get("https://tech-test-backend.dwsbrazil.io/posts");
-    return response.data;
+    return await fetch("https://tech-test-backend.dwsbrazil.io/posts")
+    .then(data => data.json())
+    .catch(error => console.log(error));;
   }
 
   fetchPost = async(id) => {
-    const response = await axios.get(`https://tech-test-backend.dwsbrazil.io/posts/${id}`);
-    return response.data;
+    return await fetch(`https://tech-test-backend.dwsbrazil.io/posts/${id}`)
+    .then(data => data.json())
+    .catch(error => console.log(error));
   }
 };

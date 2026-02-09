@@ -1,29 +1,45 @@
 import React from "react";
-import { BodySmall, H2 } from "../../assets/styles/default";
-import { ChipsSort, IconSort, BodyContainer, WrapperSort, SortLabel, RowSort, Content } from "./home.styles";
+import { Small } from "assets/styles/default";
+import {
+  ChipsSort,
+  IconSort,
+  BodyContainer,
+  WrapperSort,
+  SortLabel,
+  RowSort,
+  Content,
+  Title
+} from "./home.styles";
+import { Filters, FiltersMobile, Gallery } from "components";
+import { useGallery } from "hooks/gallery";
+import { useIsMobile } from "hooks/media-query";
 
 
 export const Home = () => {
-  const [sortBy, setSortBy] = React.useState(0);
+  const { setFilters, filters } = useGallery();
+  const isMobile = useIsMobile();
 
+  const sortByDate = () => {
+    const sortBy = filters.sortBy === 0 ? 1 : 0
+    setFilters((acc) => ({ ...acc, sortBy: sortBy}))
+  }
 
   return (
     <BodyContainer>
-      {/* row sort */}
       <RowSort>
-        <H2>DWS Blog</H2>
+        <Title>DWS Blog</Title>
+        {isMobile && (<FiltersMobile />)}
         <WrapperSort style={{ display: "flex", justifyContent: "flex-end" }}>
           <SortLabel>Sort by:</SortLabel>
-          <ChipsSort onClick={() => setSortBy(sortBy === 0 ? 1 : 0)}>
-            <BodySmall>{sortBy === 0 ? "Newest first" : "Oldest first"}</BodySmall>
+          <ChipsSort onClick={sortByDate}>
+            <Small>{filters.sortBy === 0 ? "Newest first" : "Oldest first"}</Small>
             <IconSort />
           </ChipsSort>
         </WrapperSort>
       </RowSort>
-      
       <Content>
-        <div>Filters</div>
-        <div>Gallery</div>
+        {!isMobile && <Filters />}
+        <Gallery />
       </Content>
     </BodyContainer>
   );
