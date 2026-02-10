@@ -34,19 +34,16 @@ export function FiltersMobile() {
   const [modalAuthorIsOpen, setModalAuthorIsOpen] = useState(false);
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      return await categoriesService.fetchCategories()
-        .then(categories => setCategories(categories));
-    }
-    fetchCategories();
-  }, [])
-
-  useEffect(() => {
-    const fetchAuthors = async () => {
-      return await authorsService.fetchAuthors()
-        .then(authors => setAuthors(authors));
-    }
-    fetchAuthors();
+    const controller = new AbortController()
+    Promise.all([
+      categoriesService.fetchCategories(),
+      authorsService.fetchAuthors()
+    ])
+    .then(([categories,authors ]) => {
+      setCategories(categories);
+      setAuthors(authors);
+    })
+    return () => controller.abort();
   }, [])
 
   const categoryClicked = useCallback((categoryId) => {

@@ -18,8 +18,9 @@ const FilterWrapper = styled.div`
   max-width: 314px;
   width: 100%;
 
-  @media (min-width: 900px) {
+  @media (min-width: 768px) {
     display: flex;
+    min-width: 160px;
   }
 `;
 

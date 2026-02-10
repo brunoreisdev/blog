@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { accent, neutrals } from "../../../assets/colors";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
+import { List } from "components/commons/list/list.component";
+import { Li } from "components/commons/list/list.styles";
 
 
 const Container = styled.div`
@@ -11,6 +13,9 @@ const Container = styled.div`
   position: absolute;
   background-color: ${neutrals.lightest};
   margin-bottom: 16px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
 `
 
 const HeaderContainer = styled.div`
@@ -68,6 +73,11 @@ const SearchInput = styled.input`
   font-size: 16px;
 `;
 
+const ListMobile = styled(List)`
+  ${Li} {
+    padding: 4px 8px;
+  }
+`
 
 export {
   InputWrapper,
@@ -75,5 +85,6 @@ export {
   HeaderContainer,
   Container,
   ArrowLeftIcon,
-  ExitIcon
+  ExitIcon,
+  ListMobile
 }

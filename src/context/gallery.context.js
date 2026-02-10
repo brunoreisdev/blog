@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useCallback, useMemo } from "react";
+import { createContext, useState, useEffect, useMemo } from "react";
 import { PostsService } from "services";
 
 export const GalleryContext = createContext(null);

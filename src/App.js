@@ -9,15 +9,15 @@ function App() {
   return (
     
     <div className="App">
-      <Header />
-      <BrowserRouter>
-        <GalleryProvider>
+      <GalleryProvider>
+        <BrowserRouter>
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/post/:id" element={<Post />} />
           </Routes>
-        </GalleryProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </GalleryProvider>
     </div>
   );
 }

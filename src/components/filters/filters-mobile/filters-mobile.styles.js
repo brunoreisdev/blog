@@ -44,7 +44,6 @@ const ChipsIcon = styled(MdKeyboardArrowDown)`
 const ChipsFilters = styled.div`
   position: relative;
   display: inline-block;
-  width: 100%;
 `
 
 const Modal = styled.div`

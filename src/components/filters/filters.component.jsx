@@ -18,19 +18,17 @@ export function Filters() {
   const [authorsSelected, setAuthorsSelected] = useState([]);
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      return await categoriesService.fetchCategories()
-        .then(categories => setCategories(categories));
-    }
-    fetchCategories();
-  }, [])
+    const controller = new AbortController()
+    Promise.all([
+      categoriesService.fetchCategories(),
+      authorsService.fetchAuthors()
+    ])
+    .then(([categories,authors ]) => {
+      setCategories(categories);
+      setAuthors(authors);
+    })
 
-  useEffect(() => {
-    const fetchAuthors = async () => {
-      return await authorsService.fetchAuthors()
-        .then(authors => setAuthors(authors));
-    }
-    fetchAuthors();
+    return () => controller.abort();
   }, [])
 
   const categoryClicked = useCallback((categoryId) => {

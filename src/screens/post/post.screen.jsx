@@ -1,8 +1,24 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { ChipsBackButton, ChipsIcon, ChipsLabel, Content, DateText, Divisor, FeaturedImage, ImageWrapper, LatestLabel, Loading, Picture, PostContainer, PostInformation, Text, UserWrapper } from "./post.styles";
+import {
+  ChipsBackButton,
+  ChipsIcon,
+  ChipsLabel,
+  Content,
+  DateText,
+  Divisor,
+  FeaturedImage,
+  ImageWrapper,
+  LatestLabel,
+  Loading,
+  Picture,
+  PostContainer,
+  PostInformation,
+  Text,
+  UserWrapper
+} from "./post.styles";
 import { useEffect, useState } from "react";
 import { PostsService } from "services";
-import { Caption, H1, H2, Large, Small } from "assets/styles/default";
+import {  H1, Small } from "assets/styles/default";
 import { Gallery } from "components";
 
 const postService = new PostsService()
