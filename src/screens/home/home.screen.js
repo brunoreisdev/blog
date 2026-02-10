@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Activity } from "react";
 import { Small } from "assets/styles/default";
 import {
   ChipsSort,
@@ -24,11 +24,12 @@ export const Home = () => {
     setFilters((acc) => ({ ...acc, sortBy: sortBy}))
   }
 
+  const isMobileMode = isMobile ? "visible" : "hidden"
   return (
     <BodyContainer>
       <RowSort>
         <Title>DWS Blog</Title>
-        {isMobile && (<FiltersMobile />)}
+        <Activity mode={isMobileMode}><FiltersMobile /></Activity>
         <WrapperSort style={{ display: "flex", justifyContent: "flex-end" }}>
           <SortLabel>Sort by:</SortLabel>
           <ChipsSort onClick={sortByDate}>
@@ -38,7 +39,7 @@ export const Home = () => {
         </WrapperSort>
       </RowSort>
       <Content>
-        {!isMobile && <Filters />}
+        <Activity mode={!isMobileMode}><Filters /></Activity>
         <Gallery />
       </Content>
     </BodyContainer>
