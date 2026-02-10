@@ -5,7 +5,6 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { Chips } from "components/commons";
 import { Li } from "components/commons/list/list.styles";
 import { List } from "components/commons/list/list.component";
-import { FaXmark } from "react-icons/fa6";
 
 const FilterWrapper = styled.div`
   display: flex;
@@ -40,11 +39,6 @@ const ChipsLabel = styled(Caption)`
 const ChipsIcon = styled(MdKeyboardArrowDown)`
   color: ${secondary.medium};
   font-size: 24px;
-`
-
-const ChipsIconX = styled(FaXmark)`
-  color: ${secondary.medium};
-  font-size: 14px;
 `
 
 const ChipsFilters = styled.div`
@@ -87,5 +81,4 @@ export {
   Modal,
   ChipsFilters,
   ListMobile,
-  ChipsIconX
 }

@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import {
   ChipsFilters,
   ChipsIcon,
-  ChipsIconX,
   ChipsLabel,
   ChipsWrapper,
   FilterWrapper,
@@ -11,11 +10,10 @@ import {
 } from "./filters-mobile.styles";
 import { useGallery } from "hooks/gallery";
 import { AuthorsService, CategoriesService } from "services";
-import { Badge, Content } from "../filters.styles";
+import { ItemsSelected } from "../components/item-selected/item-selected.component";
 
 const categoriesService = new CategoriesService();
 const authorsService = new AuthorsService();
-
 
 function FiltersChips({ label, onClick, isClicked }) {
   return (
@@ -23,24 +21,6 @@ function FiltersChips({ label, onClick, isClicked }) {
       <ChipsLabel>{label}</ChipsLabel>
       <ChipsIcon />
     </ChipsWrapper>
-  )
-}
-
-function ItemsSelected({ items, dataRaw , onClick}) {
-  if(!items.length) return null
-  
-  return (
-    <Content>
-      {items.map(category => {
-        const name = dataRaw.find(item => item.id === category).name
-        return(
-        <Badge onClick={() => onClick(category)}>
-          <ChipsLabel>{name}</ChipsLabel>
-          <ChipsIconX  />
-        </Badge>
-      )}
-    )}
-    </Content>
   )
 }
 
@@ -78,7 +58,7 @@ export function FiltersMobile() {
     }
     setCategoriesSelected([...categoriesSelected, categoryId])
     setFilters({...filters, categories: [...categoriesSelected, categoryId] })
-  }, [categoriesSelected])
+  }, [categoriesSelected, filters, setFilters])
 
   const authorClicked = useCallback((authorId) => {
     if(authorsSelected.includes(authorId)) {
@@ -89,7 +69,7 @@ export function FiltersMobile() {
     }
     setAuthorsSelected([...authorsSelected, authorId])
     setFilters({...filters, authors: [...authorsSelected, authorId] })
-  }, [authorsSelected])
+  }, [authorsSelected, filters, setFilters])
 
 
   const handleModalAuthor = () =>{
