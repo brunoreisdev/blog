@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const H1 = styled.h1`
   font-size: 56px;
-  line-height: 130%;
   font-weight: bold;
   margin: 0;
   font-family: 'Open Sans', sans-serif;

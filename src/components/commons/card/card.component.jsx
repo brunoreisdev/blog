@@ -3,9 +3,9 @@ import { CardWrapper }  from "./card.styles";
 import { CardHeader, CardBody } from "./components";
 
 
-export function Card({ title, content, uri, createdAt, author, categories }) {
+export function Card({ title, content, uri, createdAt, author, categories, onClick }) {
   return (
-    <CardWrapper>
+    <CardWrapper onClick={onClick}>
       <CardHeader uri={uri}/>
       <CardBody
         content={content}
