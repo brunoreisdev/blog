@@ -1,16 +1,11 @@
 import styled from "styled-components";
 
-const Content = styled.div`
-  justify-content: flex-end;
-  display: flex;
-`
-
 const Grid = styled.div`
   display: flex;
   gap: 24px;
   margin: 0 auto;
   padding: 0;
-  width: auto;
+  width: 100%;
   box-sizing: border-box; 
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -23,10 +18,6 @@ const Grid = styled.div`
   @media (min-width: 1101px) {
   }
 `;
-
-
-
-
 
 export {
   Grid
